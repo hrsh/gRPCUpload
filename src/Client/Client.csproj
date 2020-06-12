@@ -6,7 +6,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Grpc.Net.Client" Version="2.29.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Protos\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\Server\Protos\fileupload.proto" Link="Protos\fileupload.proto" />
+    <None Include="..\Server\Protos\greet.proto" Link="Protos\greet.proto" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,27 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "UploadFileServer";
+
+package fileupload;
+
+service FileUploade {
+	rpc SaveFile (UploadRequest) returns (UploadResponse);
+}
+
+message UploadRequest {
+	string filename = 1;
+	string filepath = 2;
+	int32 filesize = 3;
+}
+
+message UploadResponse {
+	string filename = 1;
+	string filepath = 2;
+	bool result = 3;
+	UploadResultType resultType = 4;
+
+	enum UploadResultType {
+		Saved = 0;
+		Failed = 1;
+	}
+}
